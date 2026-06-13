@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /css/
+Disallow: /js/
+Disallow: /assets/fonts/
+Disallow: /assets/icons/
+Disallow: /assets/videos/
+Sitemap: https://myaso-testo.ru/sitemap.xml
