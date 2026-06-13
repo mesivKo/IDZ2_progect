@@ -4,4 +4,4 @@ Disallow: /js/
 Disallow: /assets/fonts/
 Disallow: /assets/icons/
 Disallow: /assets/videos/
-Sitemap: https://myaso-testo.ru/sitemap.xml
+Sitemap: https://mesivko.github.io/IDZ2_progect/sitemap.xml
