@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const reservationForm = document.getElementById("reservation-form");
   const doneForm = document.getElementById("done-form");
   const form = document.getElementById("reservationForm");
+  const consent = document.getElementById("user-consent");
 
   const inputs = form
     ? {
@@ -185,12 +186,14 @@ document.addEventListener("DOMContentLoaded", () => {
         phone: form.querySelector('input[name="phone"]'),
         quantity: form.querySelector('input[name="quantity"]'),
         date: form.querySelector('input[name="date"]'),
-        time: form.querySelector('input[name="time"]')
+        time: form.querySelector('input[name="time"]'),
+        consent: form.querySelector('input[name="user-consent"]')
       }
     : {};
 
   function setError(input, message) {
-    const errorEl = input.parentElement.querySelector(".error");
+    const field = input.closest(".field");
+    const errorEl = field?.querySelector(".error");
 
     input.classList.add("error-border");
     input.classList.remove("success-border");
@@ -199,7 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setSuccess(input) {
-    const errorEl = input.parentElement.querySelector(".error");
+    const field = input.closest(".field");
+    const errorEl = field?.querySelector(".error");
 
     input.classList.remove("error-border");
     input.classList.add("success-border");
@@ -224,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const min = new Date();
 
     min.setHours(0, 0, 0, 0);
-    max.setDate(today.getDate() + 45);
+    max.setDate(today.getDate() + 20);
 
     const date = new Date(value);
 
@@ -256,12 +260,12 @@ document.addEventListener("DOMContentLoaded", () => {
     } else setSuccess(inputs.phone);
 
     if (!inputs.quantity.value) {
-      setError(inputs.quantity, "Укажите количество гостей (от 1 до 15)");
+      setError(inputs.quantity, "Укажите количество гостей (от 1 до 40)");
       valid = false;
     } else setSuccess(inputs.quantity);
 
     if (!validateDate(inputs.date.value)) {
-      setError(inputs.date, "Выберите дату в диапазоне 45 дней");
+      setError(inputs.date, "Выберите дату максимум через 20 дней");
       valid = false;
     } else setSuccess(inputs.date);
 
@@ -270,11 +274,23 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     } else setSuccess(inputs.time);
 
+    if (!inputs.consent.checked) {
+      setError(inputs.consent, "Необходимо согласие на обработку данных");
+      valid = false;
+    } else {
+      setSuccess(inputs.consent);
+    }
+
     return valid;
   }
 
   function openModal(modal) {
     if (!modal) return;
+
+    document.querySelectorAll(".modal-overflow.active")
+      .forEach(activeModal => {
+        activeModal.classList.remove("active");
+      });
 
     modal.classList.add("active");
     document.body.classList.add("no-scroll");

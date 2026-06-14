@@ -281,7 +281,7 @@ header.open .burger-button span:nth-child(3) {
 }
 
 header.open .header-menu {
-    right: 0;
+    left: 0;
     color: var(--color-text1);
 }
 
@@ -1069,6 +1069,14 @@ footer a {
     transition: 0.3s ease;
 }
 
+.modal-scroll {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 48px;
+}
+
 .modal .title {
     text-align: center;
 }
@@ -1094,18 +1102,83 @@ footer a {
     flex: 1;
 }
 
-.form-row-container {
-    display: flex;
-    flex-direction: row;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-standart);
     width: 100%;
 }
 
-.form-column-container {
+.name {
+    grid-column: span 2;
+}
+
+.quantity-field {
+    grid-column: span 2;
+}
+
+.phone {
+    grid-column: span 2;
+}
+
+.date {
+    grid-column: span 1;
+}
+
+.time {
+    grid-column: span 1;
+}
+
+.consent-field {
+    grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
-    gap: var(--space-standart);
-    width: 100%;
+    align-items: center;
+    justify-content: center; 
+}
+
+.consent {
+    display: flex;
+    margin-left: 24px; 
+    font-size: 14px;
+}
+
+.consent span{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+}
+
+.consent input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.consent span::before,
+.consent span::after {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+}
+
+.consent span::before {
+    border: 2px solid var(--color-tertiary2);
+    border-radius: 4px;
+    background-color: var(--color-secondary1);
+}
+
+.consent span::after {
+    background: url(../assets/icons/check.svg) center/contain no-repeat;
+}
+
+.consent input:checked + span::before{
+    background-color: var(--color-tertiary2);
 }
 
 /* Модальное окно деталей блюда */
@@ -1242,7 +1315,7 @@ footer a {
         padding: 104px 20px 24px 24px;
         background-color: var(--color-secondary1);
         border-radius: 0 0 0 24px;
-        transition: right 0.5s, color 0.5s;
+        transition: left 0.5s, color 0.5s;
         z-index: 999;
     }
 
@@ -1329,6 +1402,10 @@ footer a {
     }
 
     /* Модальные окна */
+    .modal-overflow {
+        padding: 0 20px;
+    }
+
     .modal h2 {
         font-size: 44px;
     }
@@ -1338,13 +1415,9 @@ footer a {
     }
 
     .modal .button {
-        height: 64px;
+        min-height: 64px;
         border-radius: 16px;
         font-size: 20px;
-    }
-
-    .modal-overflow {
-        padding: 0 20px;
     }
 
     .dish-modal-image {
@@ -1401,12 +1474,13 @@ footer a {
 
     input {
         font-size: 16px;
+        height: 64px;
     }
 
     /* Адаптация шапки */
     .header-menu {
         width: 100%;
-        right: 100%;
+        left: 100%;
     }
 
     .address {
@@ -1544,6 +1618,37 @@ footer a {
     /* Модальные окна */
     .modal {
         padding: 24px;
+        max-height: 100%;
+    }
+
+    .modal-scroll {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        overflow-y: auto;
+    }
+
+    .modal-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .name,
+    .quantity-field,
+    .phone,
+    .date,
+    .time,
+    .consent-field {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .modal .primary-button {
+        width: 100%;
     }
 
     .dish-modal {
@@ -1557,6 +1662,10 @@ footer a {
         overflow-y: auto;
         flex-direction: column-reverse;
         gap: 24px;
+    }
+
+    .dish-scroll::-webkit-scrollbar {
+        display: none;
     }
 
     .modal-overflow {
@@ -1582,10 +1691,5 @@ footer a {
 
     .modal h3 {
         font-size: 26px;
-    }
-
-    #reservationForm .modal-content{
-        flex-direction: column;
-
     }
 }
