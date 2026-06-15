@@ -256,7 +256,7 @@ input.success-border {
     left: 5px;
     width: 20px;
     height: 1.5px;
-    border-radius: 50%;
+    border-radius: 4px;
     background-color: var(--color-text2);
     transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 }
@@ -923,7 +923,7 @@ header.open .logo {
 }
 
 .question.active p {
-    margin-top: 16px;
+    margin-top: 24px;
     max-height: 500px;
     opacity: 1;
 }
@@ -1347,6 +1347,10 @@ footer a {
         font-weight: 400;
     }
 
+    .advantages {
+        gap: 48px;
+    }
+
     .ingredient img {
         width: 184px;
         height: 184px;
@@ -1468,6 +1472,7 @@ footer a {
     }
     h4 { font-size: 18px; }
     h5 { font-size: 16px; }
+    p { font-size: 18px ;}
 
     input {
         font-size: 16px;
@@ -1557,7 +1562,8 @@ footer a {
         max-width: 100%;
     }
 
-    .advantages {
+    .advantages,
+    .advantages h2 {
         text-align: start;
     }
 
