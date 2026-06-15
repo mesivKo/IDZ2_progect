@@ -846,6 +846,7 @@ header.open .logo { display: none; }
 
     text-align: center;
 }
+.interior-info p { width: 70%; }
 
 .controls {
     width: 56px;
@@ -1245,7 +1246,7 @@ footer a {
     :root { --space-standart: 8px; }
     .container { padding: 0 20px; }
 
-    
+
     /* Типографика */
     h1 { font-size: 72px; }
     h2 { font-size: 56px; }
@@ -1329,6 +1330,7 @@ footer a {
         height: 40px;
         border-radius: 8px;
     }
+    .interior-info p { width: 90%; }
 
     .contact-content { margin: 24px 20px; }
     .contact-content .first-contact h5 { font-size: 16px; }
@@ -1466,9 +1468,7 @@ footer a {
         scroll-snap-align: start;
     }
 
-    .interior-info p { font-size: 14px; }
     .interior-slider { padding-bottom: 72px; }
-    .hall p { font-size: 14px; }
 
     .faq-content h2 { text-align: center; }
 
@@ -1564,6 +1564,8 @@ footer a {
     }
 
     .feedback-info h3 { font-size: 88px; }
+
+    .interior-info p { font-size: 14px; }
 
     .contact-content { width: 100%; }
 }
