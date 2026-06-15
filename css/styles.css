@@ -1341,11 +1341,6 @@ footer a {
 
     /* Адаптация секций */
 
-    .fact img {
-        width: 44px;
-        height: 44px;
-    }
-
     .fact {
         min-width: 40%;
         font-size: 14px;
@@ -1719,6 +1714,11 @@ footer a {
         height: 48px;
         font-size: 16px;
         border-radius: 12px;
+    }
+
+    .fact img {
+        width: 44px;
+        height: 44px;
     }
 
     .feedback-info h3 {
