@@ -434,6 +434,10 @@ header {
 
 header .primary-button {
     display: none;
+    width: 240px;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 12px;
 }
 
 /* Стили шапки при скролле */
@@ -460,9 +464,6 @@ header.scrolled .header-right-content {
 
 header.scrolled .primary-button {
     display: flex;
-    width: 240px;
-    height: 48px;
-    font-size: 16px;
 }
 
 header.scrolled .address {
@@ -495,6 +496,7 @@ header.open .logo {
 .hero {
     position: relative;
     height: 100dvh;
+    min-height: 650px;
     padding: 18dvh 0 32px;
     overflow: hidden;
 }
@@ -522,7 +524,7 @@ header.open .logo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 72px;
+    gap: 48px;
 }
 
 .hero-title div {
@@ -785,6 +787,7 @@ header.open .logo {
     padding-bottom: 64px;
     width: 100%;
     height: 70dvh;
+    min-height: 650px;
     position: relative;
     overflow: hidden;
 }
@@ -1287,15 +1290,9 @@ footer a {
     h2 { font-size: 56px; }
     h3 { font-size: 24px; }
     h4 { font-size: 16px; }
-    p { font-size: 16px; }
+    p { font-size: 18px; }
 
     /* Компоненты */
-    .button {
-        height: 48px;
-        font-size: 16px;
-        border-radius: 12px;
-    }
-
     .burger-button {
         display: block;
     }
@@ -1343,9 +1340,6 @@ footer a {
     }
 
     /* Адаптация секций */
-    .hero-title {
-        gap: 56px;
-    }
 
     .fact img {
         width: 44px;
@@ -1457,7 +1451,7 @@ footer a {
 АДАПТИВ ДЛЯ МОБИЛЬНЫХ
 ------------------------------ */
 
-@media (max-width: 608px) {
+@media (max-width: 750px) {
     /* Глобальные изменения */
 
     main {
@@ -1471,21 +1465,14 @@ footer a {
     /* Типографика */
     h1 {
         max-width: 100%;
-        font-size: 43px;
+        font-size: 56px;
     }
-
     h2 {
-        font-size: 42px;
+        font-size: 48px;
         line-height: 0.9;
     }
-
-    h4 {
-        font-size: 16px;
-    }
-
-    h5 {
-        font-size: 14px;
-    }
+    h4 { font-size: 18px; }
+    h5 { font-size: 16px; }
 
     input {
         font-size: 16px;
@@ -1526,7 +1513,7 @@ footer a {
 
     /* Адаптация секций */
     .hero .secondary-button {
-        height: 48px;
+        width: 100%;
     }
 
     .hero-title {
@@ -1556,7 +1543,7 @@ footer a {
     }
 
     .feedback-info h3 {
-        font-size: 88px;
+        font-size: 120px;
     }
 
     /* Секция преимуществ */
@@ -1577,6 +1564,10 @@ footer a {
 
     .advantages {
         text-align: start;
+    }
+
+    .menu .button {
+        width: 100%;
     }
 
     .interior-info p {
@@ -1680,6 +1671,10 @@ footer a {
         flex-direction: column-reverse;
         gap: 24px;
     }
+    .menu-noscroll {
+        width: 100%;
+        padding: 0px 15px;
+    }
 
     .dish-scroll::-webkit-scrollbar {
         display: none;
@@ -1708,5 +1703,29 @@ footer a {
 
     .modal h3 {
         font-size: 26px;
+    }
+}
+
+@media (max-width: 460px) {
+
+     /* Типографика */
+    h1 { font-size: 42px; }
+    h2 { font-size: 42px; }
+    h4 { font-size: 16px; }
+    h5 { font-size: 14px; }
+    p {font-size: 16px; }
+
+    .button {
+        height: 48px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+
+    .feedback-info h3 {
+        font-size: 88px;
+    }
+
+    .contact-content {
+        width: 100%;
     }
 }
