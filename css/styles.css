@@ -45,7 +45,6 @@
 /* Сброс отступов и box-sizing для всех элементов */
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
