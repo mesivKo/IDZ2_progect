@@ -103,6 +103,7 @@ h2 {
     font-size: 80px;
     font-weight: 400;
     line-height: 0.7;
+    text-align: center;
 }
 
 h3 {
@@ -280,11 +281,6 @@ header.open .burger-button span:nth-child(3) {
     transform: translateY(0) rotate(-45deg);
 }
 
-header.open .header-menu {
-    left: 0;
-    color: var(--color-text1);
-}
-
 header.open::before {
     content: '';
     position: fixed;
@@ -297,8 +293,11 @@ header.open::before {
 }
 
 header.open .header-right-content {
-    position: relative;
+    position: absolute;
+    right: 0;
     z-index: 1000;
+    justify-content: space-between;
+    width: 450px;
 }
 
 /* Стрелка внутри кнопки */
@@ -412,7 +411,6 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 24px;
 }
 
 /* Блок адреса */
@@ -481,13 +479,12 @@ header.open .primary-button {
     display: flex;
 }
 
-header.open .address {
-    display: flex;
-    color: var(--color-text1);
-}
-
 header.open .address svg {
     color: var(--color-primary2);
+}
+
+header.open .logo {
+    display: none;
 }
 
 
@@ -613,14 +610,19 @@ header.open .address svg {
     display: contents;
 }
 
+.about-header h2 {
+    text-align: left;
+}
+
 .about-header .title {
     grid-area: title;
-    width: 80%;
+    width: 100%;
 }
 
 .about-header .primary-button {
     grid-area: button;
     align-self: start;
+    width: 30vw;
 }
 
 .feedbacks {
@@ -686,10 +688,9 @@ header.open .address svg {
 
 .dishes {
     width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-start;
     gap: var(--space-standart);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .dish {
@@ -697,7 +698,6 @@ header.open .address svg {
     flex: 1;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 328px;
     height: 480px;
     gap: var(--space-title-subtitle1);
     padding-bottom: 8px;
@@ -1272,7 +1272,7 @@ footer a {
    АДАПТИВ ДЛЯ ПЛАНШЕТОВ
 ------------------------------ */
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
     /* Глобальные изменения */
     :root {
         --space-standart: 8px;
@@ -1315,8 +1315,13 @@ footer a {
         padding: 104px 20px 24px 24px;
         background-color: var(--color-secondary1);
         border-radius: 0 0 0 24px;
-        transition: left 0.5s, color 0.5s;
+        transition: right 0.5s, left 0.5s, color 0.5s;
         z-index: 999;
+    }
+
+    header.open .header-menu {
+        right: 0px;
+        color: var(--color-text1);
     }
 
     .menu-list {
@@ -1365,6 +1370,11 @@ footer a {
 
     .about-header .title {
         width: 100%;
+    }
+
+    .dishes {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .feedback-info h3 {
@@ -1442,7 +1452,7 @@ footer a {
 АДАПТИВ ДЛЯ МОБИЛЬНЫХ
 ------------------------------ */
 
-@media (max-width: 480px) {
+@media (max-width: 608px) {
     /* Глобальные изменения */
 
     main {
@@ -1483,6 +1493,11 @@ footer a {
         left: 100%;
     }
 
+    header.open .header-menu {
+        left: 0;
+        color: var(--color-text1);
+    }
+
     .address {
         display: none;
     }
@@ -1495,12 +1510,13 @@ footer a {
         display: none;
     }
 
-    header.open .logo {
-        display: none;
-    }
-
     header.open .address {
         display: flex;
+        color: var(--color-text1);
+    }
+
+    header.open .header-right-content {
+        width: 100%;
     }
 
     /* Адаптация секций */
@@ -1558,10 +1574,6 @@ footer a {
         text-align: start;
     }
 
-    .interior h2 {
-        text-align: center;
-    }
-
     .interior-info p {
         font-size: 14px;
     }
@@ -1589,10 +1601,11 @@ footer a {
 
     .dishes {
         padding: 0 0 0 15px;
-        flex-wrap: nowrap;
         overflow-x: auto;
         scroll-snap-type: x proximity;
         -webkit-overflow-scrolling: touch;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .dishes::-webkit-scrollbar {
