@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else setSuccess(inputs.quantity);
 
     if (!validateDate(inputs.date.value)) {
-      setError(inputs.date, "Выберите дату максимум через 20 дней");
+      setError(inputs.date, "Выберите дату в пределах 20 дней от сегодня");
       valid = false;
     } else setSuccess(inputs.date);
 
