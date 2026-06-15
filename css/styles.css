@@ -350,7 +350,7 @@ button:hover .button-arrow {
     width: 255px;
     background-image: url(../assets/images/Delay.svg);
     object-fit: cover;
-    animation: spin 2.5s linear infinite;
+    animation: spin 4s linear infinite;
 }
 
 @keyframes spin {
