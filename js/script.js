@@ -2,16 +2,15 @@
     LOADER
 ========================= */
 window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
 
-  const preloader =
-      document.getElementById("preloader");
+  if (!preloader) return;
 
   preloader.classList.add("hide");
 
   setTimeout(() => {
-      preloader.remove();
+    preloader.remove();
   }, 400);
-
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -212,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function validateName(value) {
-    return /^[A-Za-zА-Яа-яЁё]{2,}$/.test(value.trim());
+    return /^[A-Za-zА-Яа-яЁё\s-]{2,}$/.test(value.trim());
   }
 
   function validatePhone(value) {
