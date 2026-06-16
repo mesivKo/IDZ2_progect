@@ -1,20 +1,17 @@
 /* ------------------------------
    ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И ШРИФТЫ
 ------------------------------ */
-
 /* Пользовательские шрифты */
 @font-face {
     font-family: "MorfinSans";
     src: url("../assets/fonts/MorfinSans-Regular.ttf") format("truetype");
-    font-style: normal;
-    font-display: swap;
+    font-style: normal; font-display: swap;
 }
 
 @font-face {
     font-family: "Inter";
     src: url("../assets/fonts/Inter-VariableFont_opsz\,wght.ttf") format("truetype");
-    font-style: normal;
-    font-display: swap;
+    font-style: normal; font-display: swap;
 }
 
 /* CSS-переменные (цвета, отступы) */
@@ -37,33 +34,23 @@
     --space-title-subtitle2: 24px;
 }
 
-
 /* ------------------------------
    БАЗОВЫЕ ГЛОБАЛЬНЫЕ СТИЛИ
 ------------------------------ */
-
 /* Сброс отступов и box-sizing для всех элементов */
 * {
-    margin: 0;
-    box-sizing: border-box;
+    margin: 0; box-sizing: border-box;
     font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 /* Стабильная ширина скроллбара для отстутствия прыжков при открытии модальных окон*/
-html {
-    scrollbar-gutter: stable;
-}
+html {scrollbar-gutter: stable;}
 
 /* Базовые стили body */
-body {
-    margin: 0;
-
-    background: var(--color-secondary1);
-    color: var(--color-text1);
-}
+body {background: var(--color-secondary1); color: var(--color-text1);}
 
 /* Отключение скролла при открытом модальном окне */
-body.no-scroll { overflow: hidden; }
+body.no-scroll {overflow: hidden;}
 
 /* Основной контейнер для контента между шапкой и подвалом */
 main {
@@ -73,10 +60,7 @@ main {
 }
 
 /* Универсальный контейнер для центровки контента */
-.container {
-    margin: 0 auto;
-    padding: 0 40px;
-}
+.container {margin: 0 auto; padding: 0 40px;}
 
 /* Универсальный контейнер для заголовка и подзаголовка */
 .title {
@@ -85,57 +69,28 @@ main {
     gap: var(--space-title-subtitle1);
 }
 
-
 /* ------------------------------
    ТИПОГРАФИКА
 ------------------------------ */
-
 h1 {
     font-family: "MorfinSans";
-    font-size: 96px;
-    font-weight: 400;
-    line-height: 0.9;
+    font-size: 96px; font-weight: 400; line-height: 0.9;
 }
-
 h2 {
     font-family: "MorfinSans";
-    font-size: 80px;
-    font-weight: 400;
-    line-height: 0.7;
-    text-align: center;
+    font-size: 80px; font-weight: 400; line-height: 0.7;
 }
-
-h3 {
-    font-size: 32px;
-    font-weight: 500;
-}
-
-h4 {
-    font-size: 24px;
-    font-weight: 500;
-}
-
-h5 {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-p {
-    font-size: 20px;
-    font-weight: 400;
-}
+h3 {font-size: 32px; font-weight: 500;}
+h4 {font-size: 24px; font-weight: 500;}
+h5 {font-size: 16px; font-weight: 600;}
+p {font-size: 20px; font-weight: 400;}
 
 /* Акцентный текст */
-.accent {
-    font-family: "MorfinSans";
-    color: var(--color-primary2);
-}
-
+.accent {font-family: "MorfinSans"; color: var(--color-primary2);}
 
 /* ------------------------------
    КОМПОНЕНТЫ (КНОПКИ, ССЫЛКИ, ИНПУТЫ)
 ------------------------------ */
-
 a {
     display: flex;
     align-items: center;
@@ -156,7 +111,6 @@ input {
     height: 72px;
     width: 100%;
     padding: 16px;
-
     background-color: var(--color-secondary2);
 
     border: 2px solid transparent;
@@ -169,8 +123,8 @@ input {
 }
 
 /* Состояния валидации полей */
-input.error-border { border-color: var(--color-primary2); }
-input.success-border { border-color: var(--color-tertiary2); }
+input.error-border {border-color: var(--color-primary2);}
+input.success-border {border-color: var(--color-tertiary2);}
 
 /* Сообщения об ошибках */
 .error {
@@ -179,7 +133,6 @@ input.success-border { border-color: var(--color-tertiary2); }
     margin-top: 4px;
 
     color: var(--color-primary2);
-
     font-size: 12px;
 }
 
@@ -207,8 +160,8 @@ input.success-border { border-color: var(--color-tertiary2); }
     color: var(--color-text2);
     background-color: var(--color-primary2);
 }
-.primary-button:hover { background-color: var(--color-primary3); }
-.primary-button:active { background-color: var(--color-primary1); }
+.primary-button:hover {background-color: var(--color-primary3);}
+.primary-button:active {background-color: var(--color-primary1);}
 
 /* Вторичная кнопка */
 .secondary-button {
@@ -224,6 +177,10 @@ input.success-border { border-color: var(--color-tertiary2); }
     background-color: var(--color-secondary3);
 }
 
+.close-button, 
+.burger-button, 
+.unwrapper-button {background-color: transparent;}
+
 /* Кнопка закрытия (крестик) */
 .close-button {
     position: absolute;
@@ -232,8 +189,6 @@ input.success-border { border-color: var(--color-tertiary2); }
 
     width: 40px;
     height: 40px;
-
-    background-color: transparent;
 }
 .close-button::before {
     content: "";
@@ -252,8 +207,6 @@ input.success-border { border-color: var(--color-tertiary2); }
 
     width: 40px;
     height: 40px;
-
-    background-color: transparent;
 }
 .burger-button span {
     position: absolute;
@@ -267,26 +220,24 @@ input.success-border { border-color: var(--color-tertiary2); }
     background-color: var(--color-text2);
     transition: transform 0.5s, opacity 0.5s, background-color 0.5s;
 }
-.burger-button span:nth-child(1) { transform: translateY(-8px); }
-.burger-button span:nth-child(3) { transform: translateY(8px); }
+.burger-button span:nth-child(1) {transform: translateY(-8px);}
+.burger-button span:nth-child(3) {transform: translateY(8px);}
 
 /* Анимация иконки бургера в состояние "крестик" */
-header.open .burger-button span { background-color: var(--color-text1); }
-header.open .burger-button span:nth-child(1) { transform: translateY(0) rotate(45deg); }
-header.open .burger-button span:nth-child(2) { opacity: 0; }
-header.open .burger-button span:nth-child(3) { transform: translateY(0) rotate(-45deg); }
+header.open .burger-button span {background-color: var(--color-text1);}
+header.open .burger-button span:nth-child(1) {transform: translateY(0) rotate(45deg);}
+header.open .burger-button span:nth-child(2) {opacity: 0;}
+header.open .burger-button span:nth-child(3) {transform: translateY(0) rotate(-45deg);}
 
 header.open::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100%;
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.5);
-
     z-index: 998;
 }
 header.open .header-right-content {
@@ -306,7 +257,7 @@ header.open .header-right-content {
     transition: 0.3s ease;
 }
 a:hover .button-arrow,
-button:hover .button-arrow { animation: arrowPop 0.8s ease; }
+button:hover .button-arrow {animation: arrowPop 0.8s ease;}
 
 /* Анимация для стрелки */
 @keyframes arrowPop {
@@ -320,11 +271,9 @@ button:hover .button-arrow { animation: arrowPop 0.8s ease; }
     }
 }
 
-
 /* ------------------------------
    ЭКРАН ЗАГРУЗКИ
 ------------------------------ */
-
 #preloader {
     position: fixed;
     inset: 0;
@@ -348,9 +297,8 @@ button:hover .button-arrow { animation: arrowPop 0.8s ease; }
     height: 255px;
     width: 255px;
 
-    background-image: url(../assets/images/Delay.svg);
+    background-image: url(../assets/icons/Delay.svg);
     object-fit: cover;
-
     animation: spin 4s linear infinite;
 }
 
@@ -364,16 +312,13 @@ button:hover .button-arrow { animation: arrowPop 0.8s ease; }
     }
 }
 
-
 /* ------------------------------
    ШАПКА (HEADER) И НАВИГАЦИЯ
 ------------------------------ */
-
 /* Основной контейнер шапки */
 header {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
 
     display: flex;
     align-items: center;
@@ -382,7 +327,6 @@ header {
     height: 96px;
 
     transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
-
     z-index: 100;
 }
 
@@ -453,47 +397,40 @@ header.scrolled {
     background: var(--color-secondary1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.397);
 }
-header.scrolled .header-menu { gap: 14vw; }
-header.scrolled a { color: var(--color-text1); }
-header.scrolled .burger-button span { background-color: var(--color-text1); }
-header.scrolled .header-right-content { display: none; }
-header.scrolled .primary-button { display: flex; }
-header.scrolled .address { display: none; }
+header.scrolled .header-menu {gap: 14vw;}
+header.scrolled a {color: var(--color-text1);}
+header.scrolled .burger-button span {background-color: var(--color-text1);}
+header.scrolled .header-right-content {display: none;}
+header.scrolled .primary-button {display: flex;}
+header.scrolled .address {display: none;}
 
 /* Стили шапки для открытого состояния (бургер-меню) */
-header.open a {
-    display: flex;
-    color: var(--color-text1);
-}
-header.open .primary-button { display: flex; }
-header.open .address svg { color: var(--color-primary2); }
-header.open .logo { display: none; }
-
+header.open a {display: flex; color: var(--color-text1);}
+header.open .primary-button {display: flex;}
+header.open .address svg {color: var(--color-primary2);}
+header.open .logo {display: none;}
 
 /* ------------------------------
    ГЛАВНЫЙ ЭКРАН
 ------------------------------ */
-
 .hero {
     position: relative;
     padding: max(18vh, 120px) 0 32px;
     overflow: hidden;
 
     height: 100vh;
-    min-height: 650px;
+    min-height: 750px;
 }
 
 .video-fill {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
     object-position: 70% center;
-
     pointer-events: none;
 }
 
@@ -504,7 +441,6 @@ header.open .logo { display: none; }
     justify-content: space-between;
 
     height: 100%;
-
     z-index: 2;
 }
 
@@ -550,15 +486,12 @@ header.open .logo { display: none; }
     height: 56px;
 
     border-radius: 12px;
-
     background-color: var(--color-primary2);
 }
-
 
 /* ------------------------------
    СЕКЦИЯ ПРЕИМУЩЕСТВ
 ------------------------------ */
-
 .advantages {
     display: flex;
     flex-direction: column;
@@ -583,16 +516,11 @@ header.open .logo { display: none; }
     max-width: 400px;
 }
 
-.ingredient img {
-    width: 240px;
-    height: 240px;
-}
-
+.ingredient img {width: 240px; height: 240px;}
 
 /* ------------------------------
    СЕКЦИЯ О НАС
 ------------------------------ */
-
 .about {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -634,11 +562,9 @@ header.open .logo { display: none; }
     line-height: 0.5;
 }
 
-
 /* ------------------------------
    СЕКЦИЯ МЕНЮ
 ------------------------------ */
-
 .menu {
     overflow: visible;
     display: flex;
@@ -649,11 +575,12 @@ header.open .logo { display: none; }
     width: 100%;
 }
 
+.menu h2 {text-align: center;}
+
 .dishes-container {
     display: flex;
     flex-direction: column;
     gap: 48px;
-
     width: 100%;
 }
 
@@ -661,7 +588,6 @@ header.open .logo { display: none; }
     display: flex;
     flex-direction: column;
     gap: 24px;
-
     width: 100%;
 }
 
@@ -682,7 +608,6 @@ header.open .logo { display: none; }
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: var(--space-standart);
-
     width: 100%;
 }
 
@@ -693,7 +618,6 @@ header.open .logo { display: none; }
     justify-content: space-between;
     gap: var(--space-title-subtitle1);
     padding-bottom: 8px;
-
     height: 480px;
 
     cursor: zoom-in;
@@ -718,10 +642,7 @@ header.open .logo { display: none; }
     flex-direction: column;
     gap: var(--space-title-subtitle1);
 }
-
-.dish-title h4 {
-    font-size: 24px;
-}
+.dish-title h4 {font-size: 24px;}
 
 /* Настройка, чтобы было максимум 2 строки описания */
 .dish-title p {
@@ -732,7 +653,6 @@ header.open .logo { display: none; }
 
     overflow: hidden;
     overflow-wrap: anywhere;
-
     font-size: 16px;
 }
 
@@ -740,7 +660,6 @@ header.open .logo { display: none; }
     display: flex;
     flex-direction: row;
     gap: var(--space-standart);
-
     font-size: 20px;
 }
 
@@ -761,18 +680,19 @@ header.open .logo { display: none; }
     background-color: var(--color-secondary2);
 }
 
-.menu button { margin-top: 40px; }
+.menu button {margin-top: 40px;}
 
 /* ------------------------------
    СЕКЦИЯ ИНТЕРЬЕРА (INTERIOR)
 ------------------------------ */
-
 .interior {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--space-title-subtitle2);
 }
+
+.interior h2 {text-align: center;}
 
 .interior-slider {
     overflow: hidden;
@@ -789,8 +709,7 @@ header.open .logo { display: none; }
 
 .hall {
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -816,8 +735,7 @@ header.open .logo { display: none; }
 
 .hall img {
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0;
 
     width: 100%;
     height: 100%;
@@ -842,10 +760,9 @@ header.open .logo { display: none; }
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(12px);
     color: var(--color-text2);
-
     text-align: center;
 }
-.interior-info p { width: 70%; }
+.interior-info p {width: 70%;}
 
 .controls {
     width: 56px;
@@ -862,11 +779,9 @@ header.open .logo { display: none; }
 .hall.active { opacity: 1; }
 .hall.active img { transform: translateX(0); }
 
-
 /* ------------------------------
    СЕКЦИЯ FAQ (ВОПРОСЫ)
 ------------------------------ */
-
 .faq-content {
     display: flex;
     flex-direction: column;
@@ -874,11 +789,12 @@ header.open .logo { display: none; }
     gap: var(--space-title-subtitle2);
 }
 
+.faq-content h2 {text-align: center;}
+
 .questions {
     display: flex;
     flex-direction: column;
     gap: var(--space-standart);
-
     width: 100%;
 }
 
@@ -897,14 +813,12 @@ header.open .logo { display: none; }
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
     width: 100%;
 }
 
 .unwrapper-button {
     max-width: 40px;
     max-height: 40px;
-    background-color: transparent;
 }
 .unwrapper-button svg { transition: transform 0.3s ease; }
 
@@ -922,7 +836,7 @@ header.open .logo { display: none; }
     max-height: 500px;
     opacity: 1;
 }
-.question.active .unwrapper-button svg { transform: rotate(180deg); }
+.question.active .unwrapper-button svg {transform: rotate(180deg);}
 
 
 /* ------------------------------
@@ -1013,20 +927,13 @@ header.open .logo { display: none; }
     justify-content: center;
 }
 
-footer a {
-    color: var(--color-text1);
-}
+footer a {color: var(--color-text1);}
 
-.copyright {
-    font-size: 12px;
-    color: var(--color-secondary3);
-}
-
+.copyright {font-size: 12px; color: var(--color-secondary3);}
 
 /* ------------------------------
    МОДАЛЬНЫЕ ОКНА
 ------------------------------ */
-
 /* Общий фон для модальных окон */
 .modal-overflow {
     position: fixed;
@@ -1089,7 +996,7 @@ footer a {
 .modal h3 { font-size: 48px; }
 .modal h4 { font-weight: 400; }
 
-.field { flex: 1; }
+.field {flex: 1;}
 
 .form-grid {
     display: grid;
@@ -1151,7 +1058,6 @@ footer a {
 .dish-modal {
     overflow: hidden;
     padding: 0;
-
     height: 80vh;
 }
 
@@ -1173,12 +1079,11 @@ footer a {
     flex-direction: column;
     justify-content: space-between;
     padding: 40px 0 32px 32px;
-
     height: 100%;
 }
 
 .dish-modal .title,
-.dish-modal h2 { text-align: left; }
+.dish-modal h2 {text-align: left;}
 
 .dish-modal .primary-button { width: 100%; }
 
@@ -1194,11 +1099,9 @@ footer a {
     flex-direction: column;
     align-items: flex-start;
     padding: var(--space-standart) 24px;
-
     width: 100%;
 
     border-radius: 16px;
-
     background-color: var(--color-secondary2);
 }
 
@@ -1223,43 +1126,37 @@ footer a {
     max-height: 300px;
     opacity: 1;
 }
-.dish-details.active .unwrapper-button svg { transform: rotate(180deg); }
+.dish-details.active .unwrapper-button svg {transform: rotate(180deg);}
 
 .detail-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     width: 100%;
 }
-.detail-row p { font-size: 16px; }
-
+.detail-row p {font-size: 16px;}
 
 /* ------------------------------
    АДАПТИВ ДЛЯ ПЛАНШЕТОВ
 ------------------------------ */
-
 @media (max-width: 1280px) {
 
     /* Глобальные изменения */
-    :root { --space-standart: 8px; }
-    .container { padding: 0 20px; }
-
+    :root {--space-standart: 8px;}
+    .container {padding: 0 20px;}
 
     /* Типографика */
-    h1 { font-size: 72px; }
-    h2 { font-size: 56px; }
-    h3 { font-size: 24px; }
-    h4 { font-size: 16px; }
-    p { font-size: 18px; }
-
+    h1 {font-size: 72px;}
+    h2 {font-size: 56px;}
+    h3 {font-size: 24px;}
+    h4 {font-size: 16px;}
+    p {font-size: 18px;}
 
     /* Компоненты */
     .burger-button { display: block; }
 
-
     /* Адаптация шапки */
-    header { height: 72px; }
+    header {height: 72px;}
 
     .header-menu {
         flex-direction: column;
@@ -1290,9 +1187,9 @@ footer a {
         gap: 24px;
     }
 
-    header.scrolled .address { display: flex; }
-    header.scrolled .header-right-content { display: flex; }
-    header.scrolled .address svg { color: var(--color-primary2); }
+    header.scrolled .address {display: flex;}
+    header.scrolled .header-right-content {display: flex;}
+    header.scrolled .address svg {color: var(--color-primary2);}
 
 
     /* Адаптация секций */
@@ -1302,7 +1199,7 @@ footer a {
         font-weight: 400;
     }
 
-    .advantages { gap: 48px; }
+    .advantages {gap: 48px;}
     .ingredient img {
         width: 184px;
         height: 184px;
@@ -1312,35 +1209,35 @@ footer a {
         max-width: 260px;
     }
 
-    .about-header .title { width: 100%; }
+    .about-header .title {width: 100%;}
 
-    .feedback-info h3 { font-size: 136px; }
-    .feedbacks { gap: 48px; }
+    .feedback-info h3 {font-size: 136px;}
+    .feedbacks {gap: 48px;}
 
     .dishes {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
 
-    .interior-slider { padding-bottom: 48px; }
-    .hall { padding: 0 65px 16px; }
+    .interior-slider {padding-bottom: 48px;}
+    .hall {padding: 0 65px 16px;}
     .controls {
         width: 40px;
         height: 40px;
         border-radius: 8px;
     }
-    .interior-info p { width: 90%; }
+    .interior-info p {width: 90%;}
 
-    .contact-content { margin: 24px 20px; }
-    .contact-content .first-contact h5 { font-size: 16px; }
-    .contact-content .first-contact li { font-size: 14px; }
+    .contact-content {margin: 24px 20px; }
+    .contact-content .first-contact h5 {font-size: 16px;}
+    .contact-content .first-contact li {font-size: 14px;}
 
 
     /* Модальные окна */
-    .modal-overflow { padding: 0 20px; }
+    .modal-overflow {padding: 0 20px;}
 
-    .modal h2 { font-size: 44px; }
-    .modal h3 { font-size: 32px; }
+    .modal h2 {font-size: 44px;}
+    .modal h3 {font-size: 32px;}
 
     .modal .button {
         min-height: 64px;
@@ -1348,43 +1245,32 @@ footer a {
         font-size: 20px;
     }
 
-    #done-form { padding-top: 48px; }
+    #done-form {padding-top: 48px;}
 
-    .detail-row p { font-size: 14px; }
+    .detail-row p {font-size: 14px;}
 }
-
 
 /* ------------------------------
 АДАПТИВЫ ДЛЯ МОБИЛЬНЫХ
 ------------------------------ */
-
 @media (max-width: 750px) {
 
     /* Глобальные изменения */
-    main { gap: 96px; }
-    .container { padding: 0 15px; }
-
+    main {gap: 96px;}
+    .container {padding: 0 15px;}
 
     /* Типографика */
-    h1 {
-        max-width: 100%;
-        font-size: 50px;
-    }
-    h2 {
-        font-size: 48px;
-        line-height: 0.9;
-    }
-    h4 { font-size: 18px; }
-    h5 { font-size: 16px; }
-    p { font-size: 18px ;}
-
+    h1 {max-width: 100%; font-size: 50px;}
+    h2 {font-size: 48px; line-height: 0.9;}
+    h4 {font-size: 18px;}
+    h5 {font-size: 16px;}
+    p {font-size: 18px;}
 
     /* Компоненты */
     input {
         font-size: 16px;
         height: 64px;
     }
-
 
     /* Адаптация шапки */
     .header-menu {
@@ -1397,21 +1283,21 @@ footer a {
         color: var(--color-text1);
     }
 
-    .address { display: none; }
+    .address {display: none;}
 
-    header.scrolled .primary-button { display: flex; }
-    header.scrolled .address { display: none; }
+    header.scrolled .address {display: none;}
 
     header.open .address {
         display: flex;
         color: var(--color-text1);
     }
-    header.open .header-right-content { width: 100%; }
+    header.open .header-right-content {width: 100%;}
+    header.open .primary-button {display: flex;}
 
 
     /* Адаптация секций */
-    .hero { padding: max(14vh, 80px) 0 16px; }
-    .hero .secondary-button { width: 100%; }
+    .hero {padding: max(14vh, 80px) 0 16px;}
+    .hero .secondary-button {width: 100%;}
     .hero-title { gap: 24px; }
     .fact {
         gap: 16px;
@@ -1419,15 +1305,9 @@ footer a {
         min-width: 100%;
     }
 
-    .advantages,
-    .advantages h2 {
-        text-align: start;
-    }
-    .ingredient img {
-        width: 104px;
-        height: 104px;
-    }
-    .ingredients { gap: 32px; }
+    .advantages {text-align: start;}
+    .ingredient img {width: 104px; height: 104px;}
+    .ingredients {gap: 32px;}
     .ingredient {
         flex-direction: row;
         gap: 24px;
@@ -1441,37 +1321,34 @@ footer a {
             "feedbacks"
             "button";
     }
-    .about-header .primary-button { width: 100%; }
-    .feedback-info h3 { font-size: 120px; }
+    .about-header .primary-button {width: 100%;}
+    .feedback-info h3 {font-size: 120px;}
 
     /* Меню (горизонтальный скролл) */
-    .menu { padding: 0; }
+    .menu {padding: 0;}
     .menu-noscroll {
         width: 100%;
         padding: 0px 15px;
     }
-    .category-title { padding: 0 15px; }
-    .menu .button { width: 100%; }
+    .category-title {padding: 0 15px;}
+    .menu .button {width: 100%;}
     .dishes {
         padding: 0 0 0 15px;
         overflow-x: auto;
         scroll-snap-type: x proximity;
-        -webkit-overflow-scrolling: touch;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
-    .dishes::-webkit-scrollbar { display: none; }
+    .dishes::-webkit-scrollbar {display: none;}
     .dish {
         flex: 0 0 auto;
         width: 312px;
         scroll-snap-align: start;
     }
 
-    .interior-slider { padding-bottom: 72px; }
+    .interior-slider {padding-bottom: 72px;}
 
-    .faq-content h2 { text-align: center; }
-
-    .contacts-map { height: 700px; }
+    .contacts-map {height: 700px;}
     .contact-content {
         margin: 24px 0;
         padding: 0 15px;
@@ -1479,17 +1356,15 @@ footer a {
 
 
     /* Модальные окна */
-    .modal-overflow {
-        padding: 15px;
-    }
+    .modal-overflow {padding: 15px;}
 
     .modal {
         padding: 24px;
         max-height: 100%;
     }
 
-    .modal h2 { font-size: 40px; }
-    .modal h3 { font-size: 26px; }
+    .modal h2 {font-size: 40px;}
+    .modal h3 {font-size: 26px;}
 
     .modal-scroll {
         width: 100%;
@@ -1498,21 +1373,18 @@ footer a {
         gap: 24px;
         overflow-y: auto;
     }
-    .modal-scroll::-webkit-scrollbar { display: none;}
+    .modal-scroll::-webkit-scrollbar {display: none;}
 
-    .modal .primary-button { width: 100%; }
+    .modal .primary-button {width: 100%;}
 
-    .form-grid { grid-template-columns: 1fr; }
+    .form-grid {grid-template-columns: 1fr;}
 
     .name,
     .quantity-field,
     .phone,
     .date,
     .time,
-    .consent-field {
-        grid-column: auto;
-        grid-row: auto;
-    }
+    .consent-field {grid-column: auto; grid-row: auto;}
 
     .dish-modal {
         padding: 0;
@@ -1526,27 +1398,26 @@ footer a {
         flex-direction: column-reverse;
         gap: 24px;
     }
-    .dish-scroll::-webkit-scrollbar { display: none; }
+    .dish-scroll::-webkit-scrollbar {display: none;}
 
-    .dish-modal .primary-button { margin-top: 16px; }
+    .dish-modal .primary-button {margin-top: 16px;}
 
     .dish-modal-image {
         min-height: 250px;
         width: 100%;
     }
 
-    .dish-modal .modal-content { padding: 0px 24px 24px; }
+    .dish-modal .modal-content {padding: 0px 24px 24px;}
 }
 
 @media (max-width: 420px) {
 
     /* Типографика */
-    h1 { font-size: 42px; }
-    h2 { font-size: 42px; }
-    h4 { font-size: 16px; }
-    h5 { font-size: 14px; }
-    p {font-size: 16px; }
-
+    h1 {font-size: 42px;}
+    h2 {font-size: 42px;}
+    h4 {font-size: 16px;}
+    h5 {font-size: 14px;}
+    p {font-size: 16px;}
 
     /* Компоненты */
     .button {
@@ -1555,16 +1426,12 @@ footer a {
         border-radius: 12px;
     }
 
-
     /* Адаптация секций */
-    .fact img {
-        width: 44px;
-        height: 44px;
-    }
+    .fact img {width: 44px; height: 44px;}
 
-    .feedback-info h3 { font-size: 88px; }
+    .feedback-info h3 {font-size: 88px;}
 
-    .interior-info p { font-size: 14px; }
+    .interior-info p {font-size: 14px;}
 
-    .contact-content { width: 100%; }
+    .contact-content {width: 100%;}
 }
