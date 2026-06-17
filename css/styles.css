@@ -380,7 +380,6 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: 1.0s ease;
 }
 
 /* Блок адреса */
