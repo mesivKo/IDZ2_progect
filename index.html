@@ -7,12 +7,16 @@
     Ручная лепка каждый день, 9 видов пельменей, открытая кухня. Забронировать стол — на сайте.">
     <meta property="og:title" content="МЯСО&ТЕСТО">
     <meta property="og:description" content="Пельменная на Патриарших">
-    <meta property="og:image" content="./assets/preview.webp">
+    <meta property="og:image" content="https://mesivko.github.io/IDZ2_progect/assets/preview.jpg">
     <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <title>Московская пельменная МЯСО&ТЕСТО</title>
 </head>
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/imask"></script>
+
     <div id="preloader">
       <div class="loader"></div>
     </div>
@@ -21,10 +25,6 @@
       <!-- стрелка вправо  -->
       <symbol id="icon-arrow" viewBox="0 0 24 24">
         <path d="M16.6963 6.69629C16.9892 6.4034 17.4649 6.4034 17.7578 6.6963L22.5303 11.4697C22.8232 11.7626 22.8232 12.2374 22.5303 12.5303L17.7578 17.3037C17.4649 17.5966 16.9892 17.5966 16.6963 17.3037C16.4034 17.0108 16.4034 16.5351 16.6963 16.2422L20.1895 12.75L2 12.75C1.58579 12.75 1.25 12.4142 1.25 12C1.25 11.5858 1.58579 11.25 2 11.25L20.1895 11.25L16.6963 7.75782C16.4034 7.46492 16.4034 6.98919 16.6963 6.69629Z" fill="currentColor"/>
-      </symbol>
-      <!-- шеврон вниз -->
-      <symbol id="icon-chevron" viewBox="0 0 24 24">
-        <path d="M16.4697 9.46967C16.7626 9.17678 17.2373 9.17678 17.5302 9.46967C17.8231 9.76256 17.8231 10.2373 17.5302 10.5302L12.5302 15.5302C12.2373 15.8231 11.7626 15.8231 11.4697 15.5302L6.46967 10.5302C6.17678 10.2373 6.17678 9.76256 6.46967 9.46967C6.76256 9.17678 7.23732 9.17678 7.53022 9.46967L11.9999 13.9394L16.4697 9.46967Z" fill="currentColor"/>
       </symbol>
     </svg>
 
@@ -439,52 +439,28 @@
           <div class="question">
             <div class="wrapper-title">
               <h4>Можно ли купить замороженные пельмени домой?</h4>
-              <button class="button unwrapper-button" aria-label="Раскрыть">
-                <svg 
-                  width="24" 
-                  height="24">
-                  <use href="#icon-chevron"/>
-                </svg>
-              </button>
+              <button class="button unwrapper-button" aria-label="Раскрыть"></button>
             </div>
             <p>Да. У нас есть витрина с&nbsp;замороженными полуфабрикатами. Вы выбираете любой вид из&nbsp;меню, и&nbsp;мы&nbsp;даем вам вакуумную упаковку с&nbsp;датой лепки и составом. Дома варите 5-7 минут в&nbsp;подсоленной воде&nbsp;— и вкус тот&nbsp;же, что у&nbsp;нас за&nbsp;столом. Цена такая же, как&nbsp;в&nbsp;меню. Никакой наценки за&nbsp;упаковку.</p>
           </div>
           <div class="question">
             <div class="wrapper-title">
               <h4>Нужно ли бронировать стол заранее?</h4>
-              <button class="button unwrapper-button" aria-label="Раскрыть">
-                <svg 
-                  width="24" 
-                  height="24">
-                  <use href="#icon-chevron"/>
-                </svg>
-              </button>
+              <button class="button unwrapper-button" aria-label="Раскрыть"></button>
             </div>
             <p>В будни днем — можно прийти без&nbsp;брони, места почти всегда есть. В пятницу и&nbsp;субботу вечером&nbsp;— настоятельно рекомендуем бронировать за&nbsp;5-10 дней. Наш главный зал всего на&nbsp;40&nbsp;мест, и&nbsp;они разлетаются быстро. Отдельный кабинет на&nbsp;15&nbsp;человек лучше бронировать минимум за неделю. Бронь по&nbsp;телефону или&nbsp;через форму на&nbsp;сайте.</p>
           </div>
           <div class="question">
             <div class="wrapper-title">
               <h4>Можно ли у вас провести банкет или&nbsp;корпоратив?</h4>
-              <button class="button unwrapper-button" aria-label="Раскрыть">
-                <svg 
-                  width="24" 
-                  height="24">
-                  <use href="#icon-chevron"/>
-                </svg>
-              </button>
+              <button class="button unwrapper-button" aria-label="Раскрыть"></button>
             </div>
             <p>Да. У нас есть отдельный кабинет на&nbsp;15&nbsp;человек с&nbsp;дровяным камином и&nbsp;длинным столом. Для компаний до&nbsp;40 человек&nbsp;— можем закрыть весь ресторан под&nbsp;ваше мероприятие. Условия обсуждаются индивидуально. После заполнения формы бронирования вам перезвонит наш менеджер, с&nbsp;которым можно обсудить детали.</p>
           </div>
           <div class="question">
             <div class="wrapper-title">
               <h4>Откуда вы берете мясо для&nbsp;дичи?</h4>
-              <button class="button unwrapper-button" aria-label="Раскрыть">
-                <svg 
-                  width="24" 
-                  height="24">
-                  <use href="#icon-chevron"/>
-                </svg>
-              </button>
+              <button class="button unwrapper-button" aria-label="Раскрыть"></button>
             </div>
             <p>Только из лицензионных охотничьих хозяйств. Никакой браконьерской дичи. Лось&nbsp;— Тверская область, олень&nbsp;— Ямал, кабан&nbsp;— Калужская область, медвежатина&nbsp;— Камчатка (сезонно). У&nbsp;каждого поставщика есть ветеринарные сертификаты, которые мы&nbsp;храним три года. Можем показать по&nbsp;запросу.</p>
           </div>
@@ -581,17 +557,17 @@
             </div>
 
             <div class="field phone">
-              <input type="tel" name="phone" id="phone" placeholder="+7 (___) ___-__-__" required />
+              <input type="text" name="phone" id="phone" placeholder="+7 (___) ___-__-__" required />
               <span class="error"></span>
             </div>
 
             <div class="field date">
-              <input type="date" name="date" required />
+              <input type="text" name="date" id="date" placeholder="Дата" required />
               <span class="error"></span>
             </div>
 
             <div class="field time">
-              <input type="time" name="time" required />
+              <input type="text" name="time" id="time" placeholder="Время" required />
               <span class="error"></span>
             </div>
 
@@ -646,13 +622,7 @@
               <div class="dish-details">
                 <div class="wrapper-title">
                   <p><b>Подробнее о блюде</b></p>
-                  <button class="button unwrapper-button" aria-label="Раскрыть">
-                    <svg 
-                      width="24" 
-                      height="24">
-                      <use href="#icon-chevron"/>
-                    </svg>
-                  </button>
+                  <button class="button unwrapper-button" aria-label="Раскрыть"></button>
                 </div>
                 <div class="dish-details-info">
                   <p><b>В порции</b></p>

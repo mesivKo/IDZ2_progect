@@ -190,14 +190,39 @@ input.success-border {border-color: var(--color-tertiary2);}
     width: 40px;
     height: 40px;
 }
-.close-button::before {
+.close-button::before,
+.close-button::after {
     content: "";
-    display: inline-block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
 
     width: 24px;
-    height: 24px;
+    height: 1.5px;
+    border-radius: 4px;
+    background: currentColor;
+}
+.close-button::before {transform: translate(-50%, -50%) rotate(45deg);}
+.close-button::after {transform: translate(-50%, -50%) rotate(-45deg);}
 
-    background: url("../assets/icons/cross.svg") center/contain no-repeat;
+.unwrapper-button {
+    position: relative;
+    max-width: 40px;
+    max-height: 40px;
+}
+.unwrapper-button::after { 
+    content: "";
+    position: absolute;
+    inset: 12px;
+
+    width: 10px;
+    height: 10px;
+
+    border: solid var(--color-text1);
+    border-width: 0 2.5px 2.5px 0;
+    border-radius: 1px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease; 
 }
 
 /* Кнопка-бургер */
@@ -816,12 +841,6 @@ header.open .logo {display: none;}
     width: 100%;
 }
 
-.unwrapper-button {
-    max-width: 40px;
-    max-height: 40px;
-}
-.unwrapper-button svg { transition: transform 0.3s ease; }
-
 .question p {
     overflow: hidden;
     margin: 0;
@@ -836,7 +855,7 @@ header.open .logo {display: none;}
     max-height: 500px;
     opacity: 1;
 }
-.question.active .unwrapper-button svg {transform: rotate(180deg);}
+.question.active .unwrapper-button::after {transform: rotate(225deg);}
 
 
 /* ------------------------------
@@ -1021,38 +1040,53 @@ footer a {color: var(--color-text1);}
 
 .consent {
     display: flex;
-    margin-left: 24px; 
+    align-items: flex-start;
     font-size: 14px;
+    cursor: pointer;
 }
-.consent span{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 8px;
-}
-.consent input{
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.consent span::before,
-.consent span::after {
-    content: "";
+.consent input {
     position: absolute;
-    left: -24px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
+    opacity: 0;
+    pointer-events: none;
+}
+.consent span {
+    position: relative;
+    padding-left: 28px;
+    display: inline-block;
+    line-height: 1.4;
 }
 .consent span::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 18px;
+    height: 18px;
+
     border: 2px solid var(--color-tertiary2);
     border-radius: 4px;
     background-color: var(--color-secondary1);
 }
-.consent span::after { background: url(../assets/icons/check.svg) center/contain no-repeat; }
-.consent input:checked + span::before{ background-color: var(--color-tertiary2); }
 
+.consent span::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 2px;
+
+    width: 6px;
+    height: 10px;
+
+    border: solid var(--color-secondary1);
+    border-width: 0 2px 2px 0;
+    border-radius: 1px;
+    transform: rotate(45deg);
+
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.consent input:checked + span::after {opacity: 1;}
+.consent input:checked + span::before {background-color: var(--color-tertiary2);}
 
 /* Модальное окно деталей блюда */
 .dish-modal {
@@ -1126,7 +1160,7 @@ footer a {color: var(--color-text1);}
     max-height: 300px;
     opacity: 1;
 }
-.dish-details.active .unwrapper-button svg {transform: rotate(180deg);}
+.dish-details.active .unwrapper-button::after {transform: rotate(225deg);}
 
 .detail-row {
     display: flex;

@@ -131,44 +131,49 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", closeMenu);
   });
 
-
   /* =========================
-     PHONE MASK
+    IMASK PHONE
   ========================= */
+
   const phoneInput = document.getElementById("phone");
 
-  function setCursorPosition(pos, el) {
-    el.focus();
-    el.setSelectionRange(pos, pos);
-  }
-
-  function mask(event) {
-    let matrix = "+7 (___) ___-__-__";
-    let i = 0;
-    let def = matrix.replace(/\D/g, "");
-    let val = this.value.replace(/\D/g, "");
-
-    if (def.length >= val.length) val = def;
-
-    this.value = matrix.replace(/./g, function (a) {
-      if (/[_\d]/.test(a) && i < val.length) return val.charAt(i++);
-      return i >= val.length ? "" : a;
+  if (phoneInput && window.IMask) {
+    IMask(phoneInput, {
+      mask: "+{7} (000) 000-00-00"
     });
+  }
 
-    if (event.type === "blur") {
-      if (this.value.length < 5) this.value = "";
-    } else {
-      setCursorPosition(this.value.length, this);
+  /* =========================
+    FLATPICKR DATE / TIME
+  ========================= */
+
+  const dateInput = document.getElementById("date");
+  const timeInput = document.getElementById("time");
+
+  if (window.flatpickr) {
+
+    if (dateInput) {
+      flatpickr(dateInput, {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        maxDate: new Date().fp_incr(20),
+        disableMobile: true
+      });
     }
-  }
 
-  if (phoneInput) {
-    phoneInput.addEventListener("input", mask, false);
-    phoneInput.addEventListener("focus", mask, false);
-    phoneInput.addEventListener("blur", mask, false);
-    phoneInput.addEventListener("keydown", mask, false);
-  }
+    if (timeInput) {
+      flatpickr(timeInput, {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true,
+        minTime: "12:00",
+        maxTime: "20:00",
+        disableMobile: true
+      });
+    }
 
+  }
 
   /* =========================
      MODALS
@@ -229,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
     min.setHours(0, 0, 0, 0);
     max.setDate(today.getDate() + 20);
 
-    const date = new Date(value);
+    const date = new Date(value + "T00:00");
 
     return date >= min && date <= max;
   }
