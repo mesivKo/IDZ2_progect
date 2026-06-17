@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dateFormat: "H:i",
         time_24hr: true,
         minTime: "12:00",
-        maxTime: "20:00",
+        maxTime: "21:00",
         disableMobile: true
       });
     }
@@ -221,7 +221,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function validatePhone(value) {
     const cleaned = value.replace(/\D/g, "");
-    return /^7\d{10}$/.test(cleaned) || /^8\d{10}$/.test(cleaned);
+    return /^7\d{10}$/.test(cleaned);
+  }
+
+  function validateQuantity(value) {
+    if (!value) return false;
+    const number = Number(value);
+    return Number.isInteger(number) && number >= 1 && number <= 40;
   }
 
   function validateDate(value) {
@@ -263,8 +269,8 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     } else setSuccess(inputs.phone);
 
-    if (!inputs.quantity.value) {
-      setError(inputs.quantity, "Укажите количество гостей (от 1 до 40)");
+    if (!validateQuantity(inputs.quantity.value)) {
+      setError(inputs.quantity, "Укажите количество гостей (не более 40)");
       valid = false;
     } else setSuccess(inputs.quantity);
 
@@ -274,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else setSuccess(inputs.date);
 
     if (!validateTime(inputs.time.value)) {
-      setError(inputs.time, "Выберите время с 12:00 до 20:00");
+      setError(inputs.time, "Выберите время с 12:00 до 21:00");
       valid = false;
     } else setSuccess(inputs.time);
 
