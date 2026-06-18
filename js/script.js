@@ -168,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dateFormat: "H:i",
         time_24hr: true,
         minTime: "12:00",
-        maxTime: "21:00",
+        maxTime: "20:00",
         disableMobile: true
       });
     }
@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else setSuccess(inputs.date);
 
     if (!validateTime(inputs.time.value)) {
-      setError(inputs.time, "Выберите время с 12:00 до 21:00");
+      setError(inputs.time, "Выберите время с 12:00 до 20:00");
       valid = false;
     } else setSuccess(inputs.time);
 

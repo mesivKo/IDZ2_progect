@@ -141,6 +141,7 @@ input.success-border {border-color: var(--color-tertiary2);}
     font-size: 12px;
 }
 
+button {cursor: pointer;}
 .button {
     display: flex;
     align-items: center;
@@ -155,9 +156,7 @@ input.success-border {border-color: var(--color-tertiary2);}
 
     font-size: 20px;
     font-weight: 600;
-
     transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
 }
 
 /* Основная кнопка */
