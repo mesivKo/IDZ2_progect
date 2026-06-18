@@ -561,12 +561,12 @@ header.open .logo {display: none;}
 
 .about-header .title {
     grid-area: title;
-    width: 100%;
+    width: 90%;
 }
 .about-header .primary-button {
     grid-area: button;
     align-self: start;
-    width: 30vw;
+    width: 300px;
 }
 .feedbacks {
     grid-area: feedbacks;
@@ -1265,7 +1265,7 @@ footer a {color: var(--color-text1);}
     .about-header .title {width: 100%;}
 
     .feedback-info h3 {font-size: 136px;}
-    .feedbacks {gap: 32px;}
+    .feedbacks {gap: 56px;}
 
     .dishes {
         display: grid;
@@ -1370,6 +1370,7 @@ footer a {color: var(--color-text1);}
     }
     .about-header .primary-button {width: 100%;}
     .feedback-info h3 {font-size: 120px;}
+    .feedbacks {gap: 40px;}
 
     /* Меню (горизонтальный скролл) */
     .menu {padding: 0;}
