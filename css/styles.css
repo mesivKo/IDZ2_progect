@@ -225,7 +225,7 @@ input.success-border {border-color: var(--color-tertiary2);}
     height: 10px;
 
     border: solid var(--color-text1);
-    border-width: 0 2.5px 2.5px 0;
+    border-width: 0 2px 2px 0;
     border-radius: 1px;
     transform: rotate(45deg);
     transition: transform 0.3s ease; 
