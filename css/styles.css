@@ -208,7 +208,7 @@ input.success-border {border-color: var(--color-tertiary2);}
     width: 24px;
     height: 1.5px;
     border-radius: 4px;
-    background: currentColor;
+    background: var(--color-text1);
 }
 .close-button::before {transform: translate(-50%, -50%) rotate(45deg);}
 .close-button::after {transform: translate(-50%, -50%) rotate(-45deg);}
