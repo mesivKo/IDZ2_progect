@@ -15,19 +15,25 @@
 
 
 ## Технологии
-- HTML5 (семантическая разметка)
-- CSS3 (Flexbox, Grid, адаптивность)
-- Vanilla JavaScript (ES6+)
+- HTML5
+- CSS3
+- JavaScript
 
 
 ## Структура проекта
-/assets
-/css
-/js
-index.html
-README.md
-robots.txt
-sitemap.xml
+├── index.html          # Главная HTML-страница
+├── css/
+│   └── styles.css      # Все стили проекта
+├── js/
+│   └── script.js       # Весь JavaScript-код
+├── assets/
+│   ├── fonts/          # Шрифты
+│   ├── icons/          # Иконки 
+│   ├── images/         # Изображения 
+│   └── videos/         # Видеофайлы
+├── robots.txt          # Инструкции для поисковых роботов
+├── sitemap.xml         # Карта сайта
+└── README.md           # Описание проекта
 
 
 ## Статус проекта
